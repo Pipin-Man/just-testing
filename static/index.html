@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Dashboard</h1>
+        <p>Quick access to your daily links.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Add Link</h2>
+        <form id="link-form" class="grid-form">
+          <input id="link-name" placeholder="Link name" required />
+          <input id="link-url" placeholder="https://example.com" type="url" required />
+          <select id="link-category" required></select>
+          <button type="submit" id="link-submit">Add Link</button>
+          <button type="button" id="link-cancel" class="muted hidden">Cancel Edit</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Categories</h2>
+        <form id="category-form" class="inline-form">
+          <input id="category-name" placeholder="New category" required />
+          <button type="submit">Create</button>
+        </form>
+      </section>
+
+      <section id="messages" class="messages"></section>
+      <section id="categories" class="categories"></section>
+    </main>
+
+    <template id="category-template">
+      <article class="category-card">
+        <div class="category-head">
+          <h3></h3>
+          <button class="danger small delete-category">Delete</button>
+        </div>
+        <ul class="link-list"></ul>
+      </article>
+    </template>
+
+    <template id="link-template">
+      <li class="link-item">
+        <a target="_blank" rel="noopener noreferrer"></a>
+        <div class="actions">
+          <button class="small edit-link">Edit</button>
+          <button class="danger small delete-link">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

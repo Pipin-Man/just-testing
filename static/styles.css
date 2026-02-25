@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, #eef2ff, var(--bg) 30%);
+  color: var(--text);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 2rem auto 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.header h1 { margin: 0; }
+.header p { margin-top: 0.2rem; color: var(--muted); }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr 160px auto auto;
+  gap: 0.6rem;
+}
+
+.inline-form {
+  display: flex;
+  gap: 0.6rem;
+}
+
+input, select, button {
+  padding: 0.62rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button.small { padding: 0.45rem 0.65rem; font-size: 0.86rem; }
+button.muted { background: #9ca3af; }
+button.danger { background: var(--danger); }
+button:hover { filter: brightness(0.96); }
+
+.hidden { display: none; }
+
+.messages {
+  min-height: 1.2rem;
+  color: var(--danger);
+  font-size: 0.92rem;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.category-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.category-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.category-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.link-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.link-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.link-item a {
+  color: #1f2937;
+  text-decoration: none;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+@media (max-width: 780px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .inline-form {
+    flex-direction: column;
+  }
+
+  .link-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
